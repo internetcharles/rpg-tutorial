@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Mover.cs" />
+    <Compile Include="Assets\Script\Control\PlayerController.cs" />
+    <Compile Include="Assets\Script\Core\FollowCamera.cs" />
+    <Compile Include="Assets\Script\Movement\Mover.cs" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
