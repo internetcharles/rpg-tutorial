@@ -9,11 +9,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        InteractWithCombat();
-        InteractWithMovement();
+        if (InteractWithCombat()) return;
+        if (InteractWithMovement()) return;
     }
 
-    private void InteractWithCombat()
+    private bool InteractWithCombat()
     {
         RaycastHit[] hits = Physics.RaycastAll(GetRay());
         foreach (var hit in hits)
@@ -25,26 +25,26 @@ public class PlayerController : MonoBehaviour
             {
                 GetComponent<Fighter>().Attack(target);
             }
+            return true;
         }
+        return false;
     }
 
-    public void InteractWithMovement()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            MoveToCursor();
-        }
-    }
-
-    private void MoveToCursor()
-    {
-        Ray ray = GetRay();
+    public bool InteractWithMovement() {
+    Ray ray = GetRay();
         RaycastHit hit;
         bool hasHit = Physics.Raycast(GetRay(), out hit);
         if (hasHit)
         {
-            GetComponent<Mover>().MoveTo(hit.point);
+            if (Input.GetMouseButton(0))
+            {
+                GetComponent<Mover>().StartMoveAction(hit.point);
+            }
+
+            return true;
         }
+
+        return false;
     }
 
     private static Ray GetRay()
