@@ -8,11 +8,16 @@ using UnityEngine.AI;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour
+
+    public class Fighter : MonoBehaviour, IAction
     {
+
         [SerializeField] private float weaponRange = 2f;
+        [SerializeField] private float timeBetweenAttacks = 1f;
+        [SerializeField] private float weaponDamage = 5f;
 
         private Transform target;
+        private float timeSinceLastAttack = 0;
 
         private NavMeshAgent navMeshAgent;
 
@@ -20,16 +25,36 @@ namespace RPG.Combat
 
         void Update()
         {
+            timeSinceLastAttack += Time.deltaTime;
+
             if (target == null) return;
             
             if(!GetIsInRange()) 
             {
                 GetComponent<Mover>().MoveTo(target.position);
+
             }
-            else 
-            { 
-                GetComponent<Mover>().Stop(); 
+            else
+            {
+                GetComponent<Mover>().Cancel();
+                AttackBehavior();
             }
+        }
+
+        private void AttackBehavior()
+        {
+            if (timeSinceLastAttack > timeBetweenAttacks)
+            {
+                // this will trigger Hit() event.
+                GetComponent<Animator>().SetTrigger("attacking");
+                timeSinceLastAttack = 0;
+            }
+        }
+
+        void Hit()
+        {
+            Health healthComponent = target.GetComponent<Health>();
+            healthComponent.TakeDamage(weaponDamage);
         }
 
         private bool GetIsInRange()
@@ -43,9 +68,13 @@ namespace RPG.Combat
             target = combatTarget.transform;
         }
 
+
         public void Cancel()
         {
             target = null;
         }
+
+        // animation event
+
     }
 }
