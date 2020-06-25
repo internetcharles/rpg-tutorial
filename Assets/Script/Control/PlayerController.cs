@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
         RaycastHit[] hits = Physics.RaycastAll(GetRay());
         foreach (var hit in hits)
         {
+            
             CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-            if (target == null) continue;
+            if (!GetComponent<Fighter>().CanAttack(target)) continue;
 
             if (Input.GetMouseButtonDown(0))
             {
