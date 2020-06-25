@@ -550,10 +550,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1316317345, guid: dedc9c21464e4a74596ebe80427706cc, type: 3}
-      propertyPath: weaponRange
-      value: 1.63
-      objectReference: {fileID: 0}
     - target: {fileID: 9146263287458248067, guid: dedc9c21464e4a74596ebe80427706cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -961,7 +957,7 @@ PrefabInstance:
     - target: {fileID: 8676755682970416374, guid: 0d297c65777411342ad03e68298faa4d,
         type: 3}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d297c65777411342ad03e68298faa4d, type: 3}
