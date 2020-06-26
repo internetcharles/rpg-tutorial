@@ -91,14 +91,15 @@
     <Compile Include="Assets\RPG Character Animation Pack FREE\SuperCharacterController\SuperCharacterController\Core\SuperStateMachine.cs" />
     <Compile Include="Assets\RPG Character Animation Pack FREE\SuperCharacterController\SuperCharacterController\DebugDraw.cs" />
     <Compile Include="Assets\RPG Character Animation Pack FREE\SuperCharacterController\SuperCharacterController\Math3d.cs" />
-    <Compile Include="Assets\Script\Combat\CombatTarget.cs" />
-    <Compile Include="Assets\Script\Combat\Fighter.cs" />
-    <Compile Include="Assets\Script\Combat\Health.cs" />
-    <Compile Include="Assets\Script\Control\PlayerController.cs" />
-    <Compile Include="Assets\Script\Core\ActionScheduler.cs" />
-    <Compile Include="Assets\Script\Core\FollowCamera.cs" />
-    <Compile Include="Assets\Script\Core\IAction.cs" />
-    <Compile Include="Assets\Script\Movement\Mover.cs" />
+    <Compile Include="Assets\Scripts\Combat\CombatTarget.cs" />
+    <Compile Include="Assets\Scripts\Combat\Fighter.cs" />
+    <Compile Include="Assets\Scripts\Control\AIController.cs" />
+    <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Core\ActionScheduler.cs" />
+    <Compile Include="Assets\Scripts\Core\FollowCamera.cs" />
+    <Compile Include="Assets\Scripts\Core\Health.cs" />
+    <Compile Include="Assets\Scripts\Core\IAction.cs" />
+    <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\Tonemapper.shader" />
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\GlobalFog.shader" />
@@ -117,6 +118,7 @@
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\SunShaftsComposite.shader" />
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\ConvertDepth.shader" />
+    <None Include="Assets\Asset Packs\Animations by Explosive\README - Usage Rights for these assets 1.txt" />
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\TwirlEffect.shader" />
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
     <None Include="Assets\RPG Character Animation Pack FREE\Elements\ImageEffects\Shaders\CameraMotionBlur.shader" />
@@ -174,9 +176,6 @@
     </Reference>
     <Reference Include="UnityEngine.AccessibilityModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AndroidJNIModule">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
@@ -691,29 +690,14 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/UnityProjects/Repos/RPG Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
